@@ -2,6 +2,9 @@
 
 namespace App\FetchData;
 
-class FetchData{
+class FetchData {
+    public function __construct(){
+        // ...
+    }
 
 }
