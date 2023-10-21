@@ -3,7 +3,8 @@
     "description": "this tool for search in public githup reopsetory",
     "autoload": {
         "psr-4": {
-            "App\\": "app/"
+            "App\\": "app/",
+            "Routes\\": "routes/"
         }
     },
     "authors": [

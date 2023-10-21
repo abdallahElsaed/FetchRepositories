@@ -1,8 +1,9 @@
 <?php
 
-namespace App;
+namespace Routes;
 
 use App\Exceptions\RouteException;
+
 
 
 class Router
@@ -22,7 +23,7 @@ class Router
 
 
         if (!$action) {
-            throw new  RouteException();
+            throw new RouteException();
         }
         if (is_callable($action)) {
             return call_user_func($action);
