@@ -13,16 +13,13 @@
     <div class="row">
         <div class="col-md-12">
 
-        <?php 
-            echo "<pre>";
-            print_r($foo);
-        ?>
+        
             <form action="/githup_repo/public/index.php/api-result" method="post">
                 <div class="row">
-                    <div class="col-md-2">
+                    <!-- <div class="col-md-2">
                         <div class="mb-3">
                             <label for="username" class="form-label">User Name:</label>
-                            <input type="text" class="form-control" id="fullName" name="username">
+                            <input type="text" class="form-control" id="username" name="username">
                         </div>
                     </div>
                     <div class="col-md-2">
@@ -30,7 +27,7 @@
                             <label for="repoName" class="form-label">Repository Name:</label>
                             <input type="text" class="form-control" id="repoName" name="repo_name">
                         </div>
-                    </div>
+                    </div> -->
                     <div class="col-md-2">
                         <div class="mb-3">
                             <label for="createdAt" class="form-label">Created At (YYYY-MM-DD):</label>
@@ -81,13 +78,15 @@
                 </thead>
                 <!-- Table content -->
                 <tbody id="searchResults">
-                    <tr>
-                        <th>abdallah</th>
-                        <th>repooooo</th>
-                        <th>12-10-2023</th>
-                        <th>100</th>
-                        <th>php</th>
-                    </tr>
+                    <?php foreach($this->repository as $repo){?>
+                        <tr>
+                            <th><?= $repo['username'] ?></th>
+                            <th><?= $repo['repo_name'] ?></th>
+                            <th><?= $repo['created_at'] ?></th>
+                            <th><?= $repo['stargazers_count'] ?></th>
+                            <th><?= $repo['language'] ?></th>
+                        </tr>
+                    <?php }?>
                 </tbody>
             </table>
         </div>
