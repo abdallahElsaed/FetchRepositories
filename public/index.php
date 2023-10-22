@@ -5,6 +5,7 @@ use Routes\Router;
 // autoload 
 require __DIR__ . '/../vendor/autoload.php';
 define("RESOURCE_PATH", __DIR__ . "/../view/");
+define("CONFIG_PATH", __DIR__ . "/../app/config/");
 
 $route = new Router();
 

@@ -2,7 +2,6 @@
 namespace App\Controller;
 
 use App\View;
-use App\Exceptions\QueryException;
 use App\Services\GithubRepoService;
 
 class ApiController{
@@ -14,25 +13,13 @@ class ApiController{
 
     public   function apiResult(){
         // fetch query from request  $_GET[] (✔)
-        if(!$_POST){
-            throw new QueryException();
-        }
         $query_data = $_POST;
-        // var_dump($query_data);
+
         //throw the data from request to GithubService to get the data getData();
+        //return the data array ([ [] , [] ,[] ]) to view 
         $this->repository = (new GithubRepoService())->getData($query_data);
 
-        //return the data array ([ [] , [] ,[] ]) to view 
-
-        // return  View::make('index', [
-        //     'repository' => $repository,
-            // 'username' => $repository['username'],
-            // 'repo_name' => $repository['repo_name'],
-            // 'created_at' => $repository['created_at'],
-            // 'stargazers_count' => $repository['stargazers_count'],
-            // 'language' => $repository['language'],
-        // ]);
-
+        // var_dump($this->repository);
         // i use this way because the View::make don't work with array
         include RESOURCE_PATH . 'index.php';
     }

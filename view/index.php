@@ -34,13 +34,13 @@
                             <input type="date" class="form-control" id="createdAt" name="created_at">
                         </div>
                     </div>
-                    <!-- <div class="col-md-2">
-                        <div class="mb-3">
-                            <label for="starsNumber" class="form-label">Stars Number:</label>
-                            <input type="number" class="form-control" id="starsNumber" name="stargazers_count">
-                        </div>
-                    </div> -->
                     <div class="col-md-2">
+                        <div class="mb-3">
+                            <label for="Number of repos to show" class="form-label">Repository Number:</label>
+                            <input type="number" class="form-control" id="repos_number" name="repos_number">
+                        </div>
+                    </div>
+                    <!-- <div class="col-md-2">
                         <div class="mb-3">
                             <label for="reposToShow" class="form-label">Number of Repos to Show:</label>
                             <select class="form-select" id="reposToShow" name="repos_number">
@@ -49,7 +49,7 @@
                                 <option value="100">100</option>
                             </select>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="col-md-2">
                         <div class="mb-3">
                             <label for="language" class="form-label">Language:</label>
