@@ -78,15 +78,29 @@
                 </thead>
                 <!-- Table content -->
                 <tbody id="searchResults">
-                    <?php foreach($this->repository as $repo){?>
+                    <?php if (empty($this->repository)){ ?>
                         <tr>
-                            <th><?= $repo['username'] ?></th>
-                            <th><?= $repo['repo_name'] ?></th>
-                            <th><?= $repo['created_at'] ?></th>
-                            <th><?= $repo['stargazers_count'] ?></th>
-                            <th><?= $repo['language'] ?></th>
+                            <!-- <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th> -->
+                            
                         </tr>
-                    <?php }?>
+                    <?php 
+                        }else{
+                            foreach($this->repository as $repo){ ?>
+                                <tr>
+                                    <th><?= $repo['username'] ?></th>
+                                    <th><?= $repo['repo_name'] ?></th>
+                                    <th><?= $repo['created_at'] ?></th>
+                                    <th><?= $repo['stargazers_count'] ?></th>
+                                    <th><?= $repo['language'] ?></th>
+                                </tr>
+                        <?php }} ?>
+                  
+                   
+                    
                 </tbody>
             </table>
         </div>

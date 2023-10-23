@@ -13,5 +13,8 @@
             "email": "abdallahels2ed@gmail.com"
         }
     ],
-    "require": {}
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^9"
+    }
 }

@@ -6,8 +6,8 @@ use App\Services\GithubRepoService;
 
 class ApiController{
 
-    protected array $repository;
-    public   function index(): string {
+    protected  array $repository = [];
+    public   function index() {
         return  View::make('index');
     }
 
@@ -17,7 +17,7 @@ class ApiController{
 
         //throw the data from request to GithubService to get the data getData();
         //return the data array ([ [] , [] ,[] ]) to view 
-        $this->repository = (new GithubRepoService())->getData($query_data);
+        $this->repository = (new GithubRepoService())->getData($query_data) ;
 
         // var_dump($this->repository);
         // i use this way because the View::make don't work with array

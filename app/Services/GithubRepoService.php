@@ -43,6 +43,7 @@ class GithubRepoService {
         if( $this->repos_number){
             $filter_data = array_slice($filter_data, 0, $this->repos_number);
         }
+        // var_dump($filter_data);
         return $filter_data;
     }
 
