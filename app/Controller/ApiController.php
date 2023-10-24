@@ -12,9 +12,8 @@ class ApiController{
     }
 
     public   function apiResult(){
-        // fetch query from request  $_GET[] (✔)
+        // fetch query from request  $_POST[] (✔)
         $query_data = $_POST;
-
         //throw the data from request to GithubService to get the data getData();
         //return the data array ([ [] , [] ,[] ]) to view 
         $this->repository = (new GithubRepoService())->getData($query_data) ;
@@ -22,5 +21,5 @@ class ApiController{
         include RESOURCE_PATH . 'index.php';
     }
 
-    //TODO in the future we can fetch data from another api
 }
+//TODO in the future we can fetch data from another api
