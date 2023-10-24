@@ -6,15 +6,15 @@
     <!-- Include Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
-<body>
+<body  id="searchResults">
     <div class="container mt-4">
     <h1 class="mb-4">GitHub Repository Search</h1>
 
-    <div class="row">
+    <div class="row"  >
         <div class="col-md-12">
 
         
-            <form action="/githup_repo/public/index.php/api-result" method="post">
+            <form >
                 <div class="row">
                     <!-- <div class="col-md-2">
                         <div class="mb-3">
@@ -77,15 +77,10 @@
                     </tr>
                 </thead>
                 <!-- Table content -->
-                <tbody id="searchResults">
+                <tbody >
                     <?php if (empty($this->repository)){ ?>
                         <tr>
-                            <!-- <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th> -->
-                            
+                            <th colspan="5">You can add query to filter github repos.</th>
                         </tr>
                     <?php 
                         }else{
@@ -113,7 +108,7 @@
     <!-- Include jQuery library -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-<!-- <script>
+ <script>
     $(document).ready(function() {
         // Listen for the form submission
         $('form').submit(function(event) {
@@ -125,7 +120,7 @@
 
             // Make an Ajax POST request to your server
             $.ajax({
-                type: 'GET', // Adjust the HTTP method as needed
+                type: 'POST', // Adjust the HTTP method as needed
                 url: '/githup_repo/public/index.php/api-result', // Replace with the actual URL to your PHP script
                 data: formData,
                 success: function(data) {
@@ -135,7 +130,7 @@
             });
         });
     });
-</script> -->
+</script>
 
 </body>
 </html>
