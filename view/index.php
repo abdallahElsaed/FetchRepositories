@@ -42,6 +42,12 @@
                     </div>
                     <!-- <div class="col-md-2">
                         <div class="mb-3">
+                            <label for="Number of repos to show" class="form-label">nuber of repos i Number:</label>
+                            <input type="number" class="form-control" id="per_page" name="per_page">
+                        </div>
+                    </div> -->
+                    <!-- <div class="col-md-2">
+                        <div class="mb-3">
                             <label for="reposToShow" class="form-label">Number of Repos to Show:</label>
                             <select class="form-select" id="reposToShow" name="repos_number">
                                 <option value="10">10</option>

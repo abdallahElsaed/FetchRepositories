@@ -40,9 +40,9 @@ class GithubRepoService {
         $response = $this->response($url);
         $repos = json_decode($response, true);
         $filter_data= $this->filterData($repos);
-        if( $this->repos_number){
-            $filter_data = array_slice($filter_data, 0, $this->repos_number);
-        }
+        // if( $this->repos_number){
+        //     $filter_data = array_slice($filter_data, 0, $this->repos_number);
+        // }
         // var_dump($filter_data);
         return $filter_data;
     }
@@ -109,7 +109,7 @@ class GithubRepoService {
         }else{
             $queries=$this->created_at ? "created:>" . $this->created_at : "language:" . $this->language;
         }
-        $url = $githubApiUrl . $queries . "&sort=stars&order=desc" ;
+        $url = $githubApiUrl . $queries . "&sort=stars&order=desc&per_page=" . $this->repos_number ;
         return $url ;
     }
 }
