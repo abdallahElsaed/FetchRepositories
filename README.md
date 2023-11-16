@@ -46,12 +46,12 @@ I will talk about the cycle in this app:
 
 **First in route**
 
-![route in index.png](Fetch%20The%20Most%20Popular%20Repositories%2005438d8e167f4ed58e75eeeef7af176a/route_in_index.png)
+![route in index.png](images/route.png)
 
 **Second in controller**
 
-![controller.png](Fetch%20The%20Most%20Popular%20Repositories%2005438d8e167f4ed58e75eeeef7af176a/controller.png)
+![controller.png](images/controller.png)
 
 **Third in Github service to make actually work:**
 
-![getData method22.png](Fetch%20The%20Most%20Popular%20Repositories%2005438d8e167f4ed58e75eeeef7af176a/getData_method22.png)
+![getData method22.png](images/services.png)
