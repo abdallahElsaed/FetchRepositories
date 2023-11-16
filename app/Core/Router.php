@@ -1,6 +1,6 @@
 <?php
 
-namespace Routes;
+namespace App\Core;
 
 use App\Exceptions\RouteException;
 
@@ -8,6 +8,11 @@ use App\Exceptions\RouteException;
 
 class Router
 {
+    public function __construct(
+        private Container $container
+    ){
+
+    }
 
     private $routes = [];
     public  function register(string $route, callable | array $action): self
@@ -32,7 +37,7 @@ class Router
         if (is_array($action)) {
             [$class, $method] = $action;
             if (class_exists($class)) {
-                $class = new $class;
+                $class = $this->container->get($class);
                 if (method_exists($class, $method)) {
                     return call_user_func([$class, $method], []);
                 }

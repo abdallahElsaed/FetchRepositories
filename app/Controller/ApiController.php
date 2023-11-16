@@ -1,7 +1,7 @@
 <?php 
 namespace App\Controller;
 
-use App\View;
+use App\Core\View;
 use App\Services\GithubRepoService;
 
 class ApiController{
@@ -20,6 +20,10 @@ class ApiController{
         // i use this way because the View::make don't work with array
         include RESOURCE_PATH . 'index.php';
     }
-
+    public function x(){
+        echo "hello from api controller";
+    }
 }
+
+
 //TODO in the future we can fetch data from another api

@@ -5,7 +5,7 @@ namespace App\Core;
 use App\Controller\InvoiceController;
 use App\Controller\OrderController;
 use PhpParser\Node\Stmt\Static_;
-use Routes\Router;
+use App\Core\Router;
 
 class App
 {
@@ -13,13 +13,15 @@ class App
     
     public function __construct(protected Router $route ){
 
-    //manually injecting container
+    /* 
+    !manually injecting container
         Static::$container =new Container ;
         Static::$container->set(InvoiceController::class, function(Container $container){
             return new InvoiceController($container->get(OrderController::class));
         }) ;
         Static::$container->set(OrderController::class, fn() => new OrderController());
-    // End manually injecting container
+    !End manually injecting container
+    */ 
 
     }
 
