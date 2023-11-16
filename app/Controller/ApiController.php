@@ -8,7 +8,7 @@ class ApiController{
 
     protected  array $repository = [];
     public   function index() {
-        return  View::make('index');
+        return  View::make('index' , ['foo' => 'bo']);
     }
 
     public   function apiResult(){

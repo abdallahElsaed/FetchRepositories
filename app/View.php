@@ -25,14 +25,12 @@ class View{
         foreach ($this->parameters as $key => $value) {
             $$key = $value ;
         } 
-        // var_dump($this->parameters);
         ob_start();
         include $viewPath ;
         return ob_get_clean(); // return the view as string from output buffer
     }
     public function __toString(){
-        return   $this->render();
-        // return  (string) $this->render();
+        return  $this->render();
     }
 
     public function __get($name){
